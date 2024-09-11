@@ -1,6 +1,7 @@
 ﻿using System;
 using Telegram.Bot;
 using Telegram.Bot.Args;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 
 class Program
@@ -31,5 +32,20 @@ class Program
             text: "Hello! You said: " + message.Text, //the message text
             cancellationToken: cancellationToken //Cancellation token for async operations
             );
+    }
+
+    // This method handles errors that occur during bot operations
+    private static Task leErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
+    {
+        // Determine the type of exception and format an appropriate error message
+        var errorMessage = exception switch
+        {
+            ApiRequestException apiRequestException => $"Telegram API Error:\n[{apiRequestException.ErrorCode}]\n{apiRequestException.Message}", // Handle API errors
+            _ => exception.ToString() // Handle other types of exceptions
+        };
+
+        // Log the error message to the console
+        Console.WriteLine(errorMessage);
+        return Task.CompletedTask; // Complete the task without throwing
     }
 }
