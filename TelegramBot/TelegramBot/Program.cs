@@ -7,7 +7,7 @@ class Program
     private static readonly string BotToken = "YOUR_BOT_API_TOKEN"; // Replace with your bot token
     private static readonly TelegramBotClient BotClient = new TelegramBotClient(BotToken);
 
-    static void Task Main(string[] args)
+    static async Task Main(string[] args)
     {
         BotClient.message += Bot_OnMessage;
         BotClient.StartReceiving();
