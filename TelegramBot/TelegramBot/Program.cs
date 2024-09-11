@@ -35,7 +35,7 @@ class Program
     }
 
     // This method handles errors that occur during bot operations
-    private static Task leErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
+    private static Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
     {
         // Determine the type of exception and format an appropriate error message
         var errorMessage = exception switch
