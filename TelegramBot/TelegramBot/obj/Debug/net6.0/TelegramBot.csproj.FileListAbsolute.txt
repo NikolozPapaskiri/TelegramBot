@@ -1,0 +1,5 @@
+C:\Apps\TelegramBot\TelegramBot\TelegramBot\TelegramBot\obj\Debug\net6.0\TelegramBot.csproj.AssemblyReference.cache
+C:\Apps\TelegramBot\TelegramBot\TelegramBot\TelegramBot\obj\Debug\net6.0\TelegramBot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Apps\TelegramBot\TelegramBot\TelegramBot\TelegramBot\obj\Debug\net6.0\TelegramBot.AssemblyInfoInputs.cache
+C:\Apps\TelegramBot\TelegramBot\TelegramBot\TelegramBot\obj\Debug\net6.0\TelegramBot.AssemblyInfo.cs
+C:\Apps\TelegramBot\TelegramBot\TelegramBot\TelegramBot\obj\Debug\net6.0\TelegramBot.csproj.CoreCompileInputs.cache
