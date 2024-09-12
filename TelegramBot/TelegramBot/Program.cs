@@ -8,7 +8,7 @@ using Telegram.Bot.Types;
 class Program
 {
     // The token you received from BotFather to authenticate your bot with Telegram
-    private static readonly string BotToken = "YOUR_BOT_API_TOKEN";
+    private static readonly string BotToken = "7469086860:AAFHNEFCin6aFE0dLHSQO6-_k5MV5xvVg4E";
     // Initialize the TelegramBotClient with your bot token
     private static readonly TelegramBotClient BotClient = new TelegramBotClient(BotToken);
 
