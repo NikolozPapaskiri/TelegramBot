@@ -2,6 +2,7 @@
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Exceptions;
+using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 
 class Program
@@ -13,7 +14,28 @@ class Program
 
     static async Task Main(string[] args)
     {
-        
+       // Create a cancellation token to stop the bot gracefully
+       using var cts = new CancellationTokenSource();
+
+        // Options to specify whichupdates the bot should receive; empty means receive all types
+        var receiverOption = new ReceiverOptions
+        {
+            AllowedUpdates = { } // Receive all updates
+        };
+
+        // Start receiving pdates from Telegram
+        BotClient.StartReceiving(
+            HandleUpdateAsync, // Method to ahndle incoming updates
+            HandleErrorAsync, //Method to handle errors
+            receiverOption, //Options for receiving updates
+            cancellationToken: cts.Token // Token to cancel receiving
+            );
+
+        Console.WriteLine("Bot is up and running... press any key to exit");
+        Console.ReadKey();
+
+        // Cancel the receiving process when any key is pressed
+        cts.Cancel();
     }
 
     // This method handles incoming updates from Telegram
